@@ -28,10 +28,9 @@ jobs:
 
     - name: Install Dependencies
       run:
-        go install employeeDataGenerator
         go version
     - name: Run Build
-      run: go build main.go
+      run: go build -v main.go
 
  #   - name: Run vet & lint
  #    run: |
