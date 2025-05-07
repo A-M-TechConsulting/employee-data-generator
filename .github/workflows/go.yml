@@ -18,7 +18,7 @@ jobs:
         go-version: [ '1.21', '1.23', '1.24.x' ]
 
     steps:
-    - uses: actions/download@v4
+    - uses: actions/download-artifact@v4
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
