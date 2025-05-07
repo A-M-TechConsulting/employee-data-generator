@@ -23,6 +23,8 @@ jobs:
       uses: actions/setup-go@v4
       with:
         go-version: ${{ matrix.go-version }}
+        go-version-file: 'go.mod'
+        check-latest: true
 
     - name: Verify version
       run:
