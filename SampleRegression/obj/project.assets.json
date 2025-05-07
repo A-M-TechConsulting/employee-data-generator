@@ -1420,11 +1420,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/alexandramccoy/employee-data/SampleRegression/SampleRegression.csproj",
+      "projectUniqueName": "/Users/alexandramccoy/employee-data-generator/SampleRegression/SampleRegression.csproj",
       "projectName": "SampleRegression",
-      "projectPath": "/Users/alexandramccoy/employee-data/SampleRegression/SampleRegression.csproj",
+      "projectPath": "/Users/alexandramccoy/employee-data-generator/SampleRegression/SampleRegression.csproj",
       "packagesPath": "/Users/alexandramccoy/.nuget/packages/",
-      "outputPath": "/Users/alexandramccoy/employee-data/SampleRegression/obj/",
+      "outputPath": "/Users/alexandramccoy/employee-data-generator/SampleRegression/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/alexandramccoy/.nuget/NuGet/NuGet.Config"

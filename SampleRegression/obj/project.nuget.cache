@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6coJeM+yo7c=",
+  "dgSpecHash": "7ekcONqqZgU=",
   "success": true,
-  "projectFilePath": "/Users/alexandramccoy/employee-data/SampleRegression/SampleRegression.csproj",
+  "projectFilePath": "/Users/alexandramccoy/employee-data-generator/SampleRegression/SampleRegression.csproj",
   "expectedPackageFiles": [
     "/Users/alexandramccoy/.nuget/packages/dynamicobj/2.0.0/dynamicobj.2.0.0.nupkg.sha512",
     "/Users/alexandramccoy/.nuget/packages/fsharp.core/6.0.5/fsharp.core.6.0.5.nupkg.sha512",

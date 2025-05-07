@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SampleRegression")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a7fee759fdd9c423649940869866eae5b145356f")]
 [assembly: System.Reflection.AssemblyProductAttribute("SampleRegression")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SampleRegression")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
