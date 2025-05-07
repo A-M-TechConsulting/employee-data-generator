@@ -1,0 +1,560 @@
+{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "/Users/alexandramccoy/employee-data/synthetic_employee_data.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "EmployeeID",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Gender",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Ethnicity",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Department",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "JobTitle",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "PerformanceScore",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TenureYears",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "DisabilityStatus",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "VeteranStatus",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Location",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "LGBTStatus",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Promotion",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "InclusionProgramParticipant",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Salary",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.0009830518316266135,
+        "RuntimeInSeconds": 4.003,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Department",
+            "OutputColumnName": "Department"
+          },
+          "e3": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant",
+              "Age",
+              "PerformanceScore",
+              "TenureYears",
+              "Department",
+              "Location"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 3018,
+            "NumberOfLeaves": 209,
+            "FeatureFraction": 0.0879019,
+            "LabelColumnName": "Salary",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.0003831871855214386,
+        "RuntimeInSeconds": 0.633,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Department",
+            "OutputColumnName": "Department"
+          },
+          "e3": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant",
+              "Age",
+              "PerformanceScore",
+              "TenureYears",
+              "Department",
+              "Location"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 263,
+            "NumberOfLeaves": 2343,
+            "FeatureFraction": 0.31709772,
+            "LabelColumnName": "Salary",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.0,
+        "RuntimeInSeconds": 0.777,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Department",
+            "OutputColumnName": "Department"
+          },
+          "e3": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant",
+              "Age",
+              "PerformanceScore",
+              "TenureYears",
+              "Department",
+              "Location"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 198,
+            "NumberOfLeaves": 266,
+            "FeatureFraction": 2E-10,
+            "LabelColumnName": "Salary",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": -6.708054483772763E-05,
+        "RuntimeInSeconds": 0.656,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Department",
+            "OutputColumnName": "Department"
+          },
+          "e3": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant",
+              "Age",
+              "PerformanceScore",
+              "TenureYears",
+              "Department",
+              "Location"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 16,
+            "NumberOfLeaves": 32767,
+            "FeatureFraction": 0.18086778,
+            "LabelColumnName": "Salary",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": -0.0002081306874888167,
+        "RuntimeInSeconds": 6.672,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ],
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "PerformanceScore",
+              "TenureYears"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Department",
+            "OutputColumnName": "Department"
+          },
+          "e3": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Gender",
+              "Ethnicity",
+              "JobTitle",
+              "DisabilityStatus",
+              "VeteranStatus",
+              "LGBTStatus",
+              "Promotion",
+              "InclusionProgramParticipant",
+              "Age",
+              "PerformanceScore",
+              "TenureYears",
+              "Department",
+              "Location"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4175,
+            "NumberOfLeaves": 13,
+            "FeatureFraction": 0.45332766,
+            "LabelColumnName": "Salary",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "FeaturizeText",
+      "e3": "FeaturizeText",
+      "e4": "Concatenate",
+      "e5": "FastTreeRegression",
+      "e6": "FastForestRegression",
+      "e7": "LightGbmRegression",
+      "e8": "LbfgsPoissonRegressionRegression",
+      "e9": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * e3 * e4 * (e5 + e6 + e7 + e8 + e9)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "/Users/alexandramccoy/employee-data/SampleRegression/SampleRegression.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 100,
+    "LabelColumn": "Salary",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.1
+    }
+  }
+}
