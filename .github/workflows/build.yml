@@ -29,7 +29,7 @@ jobs:
         go version
 
     - name: Run Build
-      run: go build -v ./...
+      run: go build main.go -o /data/employeedata.csv
 
  #   - name: Run vet & lint
  #    run: |
