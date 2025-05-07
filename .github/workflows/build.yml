@@ -26,10 +26,10 @@ jobs:
         go-version-file: 'go.mod'
         check-latest: true
 
-    - name: Verify version
+    - name: Install Dependencies
       run:
+        go get .
         go version
-
     - name: Run Build
       run: go build main.go
 
