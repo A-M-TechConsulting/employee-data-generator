@@ -31,7 +31,7 @@ jobs:
         go version
 
     - name: Run Build
-      run: go build main.go -o /data/employeedata.csv
+      run: go build main.go
 
  #   - name: Run vet & lint
  #    run: |
